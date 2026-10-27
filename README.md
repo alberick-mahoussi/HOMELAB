@@ -1,4 +1,4 @@
-# 🛡️ SOC Analyst — Advanced Home Lab
+# SOC Analyst — Advanced Home Lab
 
 > **Learn • Detect • Investigate • Respond**
 > Un environnement complet d'entraînement SOC (Security Operations Center) construit sous **Oracle VirtualBox**, intégrant SIEM, détection réseau, Active Directory, machines vulnérables et outils d'attaque.
@@ -49,8 +49,7 @@ Ce home lab reproduit un environnement d'entreprise réaliste pour s'entraîner 
 
 ## Architecture
 
-![Architecture globale du lab](docs/screenshots/00-architecture.png)
->  *Remplace cette image par le schéma de ton architecture.*
+![Architecture globale du lab](docs/screenshots/architecture.png)
 
 | Machine | Rôle | OS | RAM conseillée |
 |---|---|---|---|
@@ -121,16 +120,12 @@ Le lab utilise une combinaison de modes réseau :
 3. Pour pfSense uniquement : Adapter 1 = **NAT** (WAN), Adapter 2 = **Internal Network `LAB-NET`** (LAN).
 4. Pour Security Onion : activer **Promiscuous Mode → Allow All** sur l'interface de capture.
 
-![Configuration réseau VirtualBox](docs/screenshots/01-vbox-network.png)
-> 📸 *Screenshot : onglet Network d'une VM.*
+![Configuration réseau VirtualBox](docs/screenshots/config-virtualbox-network.png)
+![Configuration réseau VirtualBox](docs/screenshots/config-network-vm.png)
 
 ---
 
 ##  Installation des machines virtuelles
-
-> 💡 **Convention screenshots** : place tes captures dans `docs/screenshots/` et garde la numérotation proposée pour une doc propre.
-
----
 
 ### 1. pfSense — Firewall / Routeur
 
@@ -144,8 +139,8 @@ Le lab utilise une combinaison de modes réseau :
 5. Accède à l'interface web `https://10.0.0.1` depuis une VM du LAN.
 6. Crée les règles firewall (autorise le LAN, logge les refus).
 
-![pfSense - assignation des interfaces](docs/screenshots/02-pfsense-interfaces.png)
-![pfSense - interface web](docs/screenshots/03-pfsense-webgui.png)
+![pfSense - assignation des interfaces](docs/screenshots/config-interface-pfsense.png)
+![pfSense - interface web](docs/screenshots/config-pfsense-web.png)
 
 **Règles firewall recommandées :**
 - Autoriser `LAB-NET → WAN` (navigation, mises à jour).
